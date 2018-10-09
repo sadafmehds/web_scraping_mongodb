@@ -1,0 +1,17 @@
+
+body{
+    margin-left: 6px !important;
+    margin-right: 6px !important;
+    background: rgb(3, 3, 53) !important;
+}
+
+.jumbotron{
+    padding: 15em !important;
+    background-image: url("mars_stuff.jpg");
+    background-size: cover;
+}
+
+.jumbotron h1{
+ 
+    color:white;
+}

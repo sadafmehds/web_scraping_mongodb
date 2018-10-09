@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='static/styles.css') }}" /> -->
+
+    <title>MARS INFO</title>
+</head>
+<body>
+        <div class="my_section">
+            <div class="jumbotron">
+                    <h1 class="text-center" style="font-family: serif;">Mission to Mars!</h1>
+                    <p class="text-center">
+                      <a class="btn btn-primary btn-lg" style="font-family: serif;" href="/scrape" role="button">Scrape New Data</a>
+                    </p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 style="color:white;padding-left: 12px;">Latest Mars News</h1>
+                    <h3 style="color:white;padding-left: 12px;"> {{data.news_title}}</h3>
+                    <p style= "font-family: serif;color: white;padding-left: 12px;">{{data.news_paragraph}}</p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 style="color:white">Featured Mars Image</h1>
+                    <!-- <img src="{{data.actual_url}}" alt="actual_url" width="100%"> -->
+                    <img src="https://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA19101_ip.jpg" alt="image_url" width="100%">
+                </div>
+                <div style="padding-top: 66px;" class="col-md-4">
+                    <div class="panel">
+                        <h1 style="text-align: center;font-family: serif;" class="panel-body">Current Weather on Mars</h1>
+                        <p style="padding-right:10px;padding-left: 10px;font-family: serif;">{{data.weather_tweet}}</p>
+                        <div style="padding-right: 10px;padding-left:10px;padding-bottom: 10px;" class="table">
+                            {{data.final_fact_table|safe}}
+                        </div>
+                    </div>
+
+                               
+                
+                </div>
+
+
+            </div>
+
+        </div>
+ 
+        <div class="container-3">
+            <div class="row">
+                <div class="col-12">
+                    <h1 style="color:white; text-align: center;">Mars Hemispheres</h1>
+                </div>
+            </div>
+            <div style="margin-left:173px;margin-right: 173px;" class="row">
+                {%for i in data.mars_hemis%}
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <img style="padding-left: 5px;padding-right: 5px;padding-top: 5px;" src="http://astropedia.astrogeology.usgs.gov/download/Mars/Viking/schiaparelli_enhanced.tif/full.jpg" width="100%">
+                        <!-- <img src= "{{i.link}}", alt="hemi_url" width="100%"> -->
+                    <div style="text-align: center;" class='footer'>{{i}}</div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+
+
+        </div>
+
+     
+      
+
+</body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
+

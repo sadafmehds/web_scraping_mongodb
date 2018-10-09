@@ -1,2 +1,7 @@
-# web_scraping_mongodb
-web_scraping_mongodb
+# Flask-PyMongo app to scrape Mars information
+***
+
+- Beautifulsoup for scraping
+- pymongo as mongoDB driver
+- Flask to create web app
+- jinja as template engine 
